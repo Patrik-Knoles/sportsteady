@@ -1,0 +1,189 @@
+{% extends 'admin/admin_panel.html' %}
+{%block changing%}
+
+<!-- Test Tables starts -->
+<div class="main-panel">
+	<div class="content-wrapper">
+
+<div class="row">
+    <!-- Epl Starts -->
+	<div class="col-md-12 grid-margin stretch-card">
+	  <div class="card">
+		<div class="card-body">
+			<h2 class="card-title text-center">English Premier League</h2>
+		  <div class="row">
+			<div class="col-12">
+			  <div class="table-responsive table-hover">
+				<table class="display expandable-table" style="width:100%">
+				  <thead>
+					<tr>
+						<th>#</th>
+						<th>Teams</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					{% for i in epl %}
+					<tr>
+						<td>{{ loop.index }}</td>
+						<td>{{ i.team_name }}</td>
+						<td>
+                            <a href="/admin/edit/team/{{ i.team_id}}/" class="text-primary">
+                                Edit
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/admin/delete/team/{{ i.team_id}}" onclick="return confirm('Do you really want to Remove {{ i.team_name}}?')" class="text-danger">
+                                Remove
+                            </a>
+                        </td>
+					</tr>
+					{% endfor %}
+				  </tbody>
+			  </table>
+			  </div>
+			</div>
+		  </div>
+		  </div>
+		</div>
+	  </div>
+      <!-- Epl Ends -->
+
+        <!-- La Liga Starts -->
+      <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+              <h2 class="card-title text-center">Spanish La Liga</h2>
+            <div class="row">
+              <div class="col-12">
+                <div class="table-responsive table-hover">
+                  <table class="display expandable-table" style="width:100%">
+                    <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Teams</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for i in la_liga %}
+                      <tr>
+                          <td>{{ loop.index }}</td>
+                          <td>{{ i.team_name }}</td>
+                          <td>
+                              <a href="/admin/edit/team/{{ i.team_id}}/" class="text-primary">
+                                  Edit
+                              </a>
+                          </td>
+                          <td>
+                              <a href="/admin/delete/team/{{ i.team_id}}" onclick="return confirm('Do you really want to Remove {{ i.team_name}}?')" class="text-danger">
+                                  Remove
+                              </a>
+                          </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <!-- La Liga Ends -->
+
+         <!-- Serie A Starts -->
+      <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+              <h2 class="card-title text-center">Italian Serie A</h2>
+            <div class="row">
+              <div class="col-12">
+                <div class="table-responsive table-hover">
+                  <table class="display expandable-table" style="width:100%">
+                    <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Teams</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for i in serie_a %}
+                      <tr>
+                          <td>{{ loop.index }}</td>
+                          <td>{{ i.team_name }}</td>
+                          <td>
+                            <a href="/admin/edit/team/{{ i.team_id}}/" class="text-primary">
+                                Edit
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/admin/delete/team/{{ i.team_id}}" onclick="return confirm('Do you really want to Remove {{ i.team_name}}?')" class="text-danger">
+                                Remove
+                            </a>
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <!-- Serie A Ends -->
+
+         <!-- Ligue 1 Starts -->
+      <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+              <h2 class="card-title text-center">French Ligue 1</h2>
+            <div class="row">
+              <div class="col-12">
+                <div class="table-responsive table-hover">
+                  <table class="display expandable-table" style="width:100%">
+                    <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Teams</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for i in ligue_1 %}
+                      <tr>
+                          <td>{{ loop.index }}</td>
+                          <td>{{ i.team_name }}</td>
+                          <td>
+                            <a href="/admin/edit/team/{{ i.team_id}}/" class="text-primary">
+                                Edit
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/admin/delete/team/{{ i.team_id}}" onclick="return confirm('Do you really want to Remove {{ i.team_name}}?')" class="text-danger">
+                                Remove
+                            </a>
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <!-- Ligue 1 Ends -->
+	</div>
+</div>
+</div>
+<!-- Test Tables ends -->
+
+{%endblock changing%}

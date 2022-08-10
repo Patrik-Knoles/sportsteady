@@ -1,0 +1,63 @@
+{% extends 'journalist/journalist_panel.html' %}
+{%block changing%}
+<div class="main-panel">
+	{% set msg = get_flashed_messages()%}
+    {%for i in msg%}
+    <p class="alert alert-success mt-2">{{i}}</p>
+    {%endfor%}
+	<div class="content-wrapper">
+		<div class="row">
+			<div class="col-md-12 grid-margin stretch-card">
+			<div class="card">
+				<div class="card-body">
+					<h2 class="card-title text-center">My posts</h2>
+				<div class="row">
+					<div class="col-12">
+					<div class="table-responsive table-hover">
+						<table class="display expandable-table" style="width:100%">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>News Title</th>
+								<th>News Content</th>
+								<th>File used</th>
+								<th>Date Published</th>
+								<th>Time Published</th>
+								<th>Edit Post</th>
+								<th>Delete Post</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for i in all_posts %}
+							<tr>
+								<td>{{ loop.index }}</td>
+								<td>{{ i.news_title}}</td>
+								<td>{{ i.news_content }}</td>
+								<td><img src="{{ url_for ('static',filename='uploads/'+i.news_image)}}" class="img-fluid"></td>
+								<td>{{ i.date_published.strftime('%d-%m-%Y') }}</td>
+								<td>{{ i.date_published.strftime('%X') }}</td>
+								<td>
+									<a href="/edit/post/{{ i.news_id }}" class="text-primary">
+										Edit
+									</a>
+								</td>
+								<td>
+									<a href="/delete/post/{{ i.news_id }}" onclick="return confirm('Do you really want to delete this post?'+'\n'+'This action cannot be undone')" class="text-danger">
+										Delete
+									</a>
+								</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+					</div>
+					</div>
+				</div>
+				</div>
+				</div>		
+			</div>
+		</div>
+	</div>
+</div>
+{%endblock changing%}
+

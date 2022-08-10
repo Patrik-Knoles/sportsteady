@@ -1,0 +1,4 @@
+Things to do;
+1.) Display all Posts
+2.) Manage News for the admin dashboard
+3.) Manage fixtures and results on the admin dashboard.

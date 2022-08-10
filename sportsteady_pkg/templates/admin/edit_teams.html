@@ -1,0 +1,51 @@
+{% extends 'admin/admin_panel.html' %}
+{%block changing%}
+
+<!-- Test Tables starts -->
+<div class="main-panel">
+	<div class="content-wrapper">
+<div class="row">
+	<div class="col-md-12 grid-margin stretch-card">
+	  <div class="card">
+		<div class="card-body">
+			<h2 class="card-title text-center"></h2>
+		  <div class="row">
+			<div class="col-12">
+			  <div class="table-responsive table-hover">
+				<form action="/admin/update/team/" method="post">
+					<input type="hidden" name="csrf_token" id="csrf_token" value="{{ csrf_token() }}">
+					<input type="hidden" name="team_id" value="{{ team_id.team_id }}">
+					<table class="display expandable-table" style="width:100%">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Team</th>
+								<th>League</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>{{ team_id.team_id }}</td>
+								<td><input name="team" value="{{ team_id.team_name}}" class="form-control"></td>
+								<td>{{team_id.subcat_details.sub_name}}</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="d-flex btn-group">
+						<button class="btn btn-outline-success mt-2">Update Team</button>
+					</div>
+				</form>
+			  </div>
+			</div>
+		  </div>
+		  </div>
+		</div>
+
+		
+	  </div>
+	</div>
+</div>
+</div>
+<!-- Test Tables ends -->
+
+{%endblock changing%}

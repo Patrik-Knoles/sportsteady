@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sportsteady | Results</title>
+
+    <!-- required meta tags-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- external stylesheet-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+</head>
+<body>
+{% extends 'user2/navbar.html' %}
+{% block changing %}
+    <h1 class="mt-5">FOOTBALL | RESULTS</h1>
+    <div class="container-fluid">
+        <!-- Epl Results Starts -->
+        <aside id="sidebar" class="left-bar">
+            <div class="feature-matchs">
+               <div class="team-btw-match">
+                 <h2 class="card-title text-center" id="repl">
+                   Premier League
+                   <span> <img src="{{url_for ('static',filename='icons/epllogo-removebg-preview.png')}}" alt="" height="60px"></span>
+               </h2>
+                 {%for i in epl %}
+                 <p>{{i.results_date.strftime('%A, %d %B %Y')}}</p>
+                  <ul class="mb-3">
+                     <li>
+                        <span>{{i.teamhome_details.team_name}}</span>
+                     </li>
+                     <li>
+                        <span>{{i.scoreboard}}</span>
+                     </li>
+                     <li>
+                        <span>{{i.teamhaway_details.team_name}}</span>
+                     </li>
+                  </ul>
+                  {%endfor%}
+               </div>
+            </div>
+         </aside>
+    <!-- Epl Results Ends -->
+
+    <!-- La Liga Results Starts -->
+        <aside id="sidebar" class="left-bar">
+            <div class="feature-matchs">
+            <div class="team-btw-match">
+                <h2 class="card-title text-center" id="rla_liga">
+                La Liga
+                <span> <img src="{{url_for ('static',filename='icons/laliga-removebg-preview.png')}}" alt="" height="60px"></span>
+            </h2>
+                {%for i in la_liga %}
+                <p>{{i.results_date.strftime('%A, %d %B %Y')}}</p>
+                <ul class="mb-3">
+                    <li>
+                        <span>{{i.teamhome_details.team_name}}</span>
+                    </li>
+                    <li>
+                        <span>{{i.scoreboard}}</span>
+                    </li>
+                    <li>
+                        <span>{{i.teamhaway_details.team_name}}</span>
+                    </li>
+                </ul>
+                {%endfor%}
+            </div>
+            </div>
+        </aside>
+    <!-- La Liga Results Ends -->
+
+    <!-- Serie A Results Starts -->
+            <aside id="sidebar" class="left-bar">
+                <div class="feature-matchs">
+                <div class="team-btw-match">
+                    <h2 class="card-title text-center" id="rserie_a">
+                    Serie A
+                    <span> <img src="{{url_for ('static',filename='icons/seriea-removebg-preview.png')}}" alt="" height="60px"></span>
+                </h2>
+                    {%for i in serie_a %}
+                    <p>{{i.results_date.strftime('%A, %d %B %Y')}}</p>
+                    <ul class="mb-3">
+                        <li>
+                            <span>{{i.teamhome_details.team_name}}</span>
+                        </li>
+                        <li>
+                            <span>{{i.scoreboard}}</span>
+                        </li>
+                        <li>
+                            <span>{{i.teamhaway_details.team_name}}</span>
+                        </li>
+                    </ul>
+                    {%endfor%}
+                </div>
+                </div>
+            </aside>
+    <!-- Serie A Results Ends -->
+
+    <!-- Ligue 1 Results Starts -->
+        <aside id="sidebar" class="left-bar mb-5">
+            <div class="feature-matchs">
+            <div class="team-btw-match">
+                <h2 class="card-title text-center" id="rligue_1">
+                Ligue 1
+                <span> <img src="{{url_for ('static',filename='icons/ligue1-removebg-preview.png')}}" alt="" height="60px"></span>
+            </h2>
+                {%for i in ligue_1 %}
+                <p>{{i.results_date.strftime('%A, %d %B %Y')}}</p>
+                <ul class="mb-3">
+                    <li>
+                        <span>{{i.teamhome_details.team_name}}</span>
+                    </li>
+                    <li>
+                        <span>{{i.scoreboard}}</span>
+                    </li>
+                    <li>
+                        <span>{{i.teamhaway_details.team_name}}</span>
+                    </li>
+                </ul>
+                {%endfor%}
+            </div>
+            </div>
+        </aside>
+    <!-- Ligue 1 Results Ends -->
+
+<!-- Footer Starts -->
+<footer class="site-footer border-top">
+	<div class="container">
+		<div class="row">
+		<div class="col-lg-4">
+			<div class="mb-5">
+			<h3 class="footer-heading mb-4">About Sportsteady</h3>
+			<p>At Sportsteady, we are charged with sole aim of providing first hand and quality information around the sporting globe and beyond, beating the breaking news.
+				<br>
+			Sports Journalists are also not left out as we provide a platform for you to enhance your journalism skills.
+			</p>
+			</div>
+
+			<div class="mb-5">
+			<h3 class="footer-heading mb-4" id="recentPosts">Recent Posts</h3>
+			{%for i in left_all_posts%}
+			<div class="block-25">
+				<ul class="list-unstyled">
+				<li class="mb-3">
+					<a href="/news/{{i.news_id}}/" class="d-flex">
+					<figure class="image mr-4">
+						<img src="{{ url_for('static',filename='/uploads/'+i.news_image)}}" alt="" class="img-fluid">
+					</figure>
+					<div class="text">
+						<h3 class="heading font-weight-light">{{i.news_title}}</h3>
+					</div>
+					</a>
+				</li>	
+				</ul>
+			</div>
+			{%endfor%}
+			</div>
+			
+		</div>
+		<div class="col-lg-4 mb-5 mb-lg-0">
+			<div class="row mb-5">
+			<div class="col-md-12">
+				<h3 class="footer-heading mb-4">Quick Menu</h3>
+			</div>
+			<div class="col-md-6 col-lg-6">
+				<ul class="list-unstyled">
+				<li><a href="#top">Home</a></li>
+				<li><a href="/user/football/fixtures/">Matches</a></li>
+				<li><a href="#top">News</a></li>
+				<li><a href="#recentPosts">Latest Posts</a></li>
+				</ul>
+			</div>
+			<div class="col-md-6 col-lg-6">
+				<ul class="list-unstyled">
+				<li><a href="/user/athletics/">Athletics</a></li>
+				<li><a href="/user/football/">Football</a></li>
+				<li><a href="/user/tennis/">Tennis</a></li>
+				</ul>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="col-md-12">
+				<h3 class="footer-heading mb-4">Follow Us</h3>
+
+				<div>
+                    <a href="https://facebook.com" target="_blank" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                    <a href="https://mobile.twitter.com/patrick_nwaduba" target="_blank" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                    <a href="https://www.instagram.com/sportsteady/" target="_blank" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                    <a href="https://www.linkedin.com/mwlite/in/patrick-nwaduba-ba479b222" target="_blank" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                </div>
+			</div>
+			</div>
+
+		</div>
+
+		<div class="col-lg-4 mb-5 mb-lg-0">
+			<div class="mb-5">
+			<span class="footer-heading mb-4">Live Stream
+				<a href="/user/login/" class="play-button popup-vimeo"><span class="icon-play d-inline-block"></span></a>
+			</span>
+			</div>
+
+			<div class="mb-5">
+			<h3 class="footer-heading mb-2">Join Our Commuity Of Journalists</h3>
+			<p>As one of the fast growing sports meadia outlets in Nigeria, sportsteady creates a platform for grassroot journalists to showcase their reporting skills. Sign up here for free Today!</p>
+				<a href="/journalist/signup/"><div class="input-group-append">
+					<button class="btn btn-primary" type="button" id="button-addon2">Sign Up</button>
+				</div></a>	  
+			</div>
+
+		</div>
+		
+		</div>
+		<div class="row pt-5 mt-5 text-center">
+		<div class="col-md-12">
+			<p>
+                Copyright &copy; &nbsp; || &nbsp; &#9734;Designed & Built by Patrick Nwaduba&#9734; &nbsp;<span class="icon-github" aria-hidden="true"></span> by <a href="https://github.com/Patrik-Knoles" target="_blank" >Patrik-Knoles</a>
+            </p>
+		</div>
+		
+		</div>
+	</div>
+	</footer>
+	<!-- Footer ends -->
+{% endblock changing %}
+    </div>
+</body>
+</html>

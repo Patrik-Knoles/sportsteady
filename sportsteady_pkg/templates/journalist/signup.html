@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+    <!-- external stylesheet-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+</head>
+<body style="background-color: whitesmoke;">
+{% extends 'user/base.html' %}
+{% block changing %}
+    <div class="container">
+        <div class="row mt-5" style="justify-content: center;">
+            <div class="col-md-9 ms-5" style="justify-content: center;">
+                <form action="/journalist_signup/" method="post" class="mt-4">
+
+                    <h1>Join the Community of Journalists</h1>
+                    <div class="col-md-9 lead mt-5" style="align-items: center;">
+                        <label>First name</label><br>
+                        {% for i in journalst_form.firstname.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ journalst_form.firstname (class_="form-control form-control-lg", placeholder="Enter Your Firstname") }}
+
+                        <label class="mt-2">Last name</label><br>
+                        {% for i in journalst_form.lastname.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ journalst_form.lastname (class_="form-control form-control-lg", placeholder="Enter Your Lastname") }}
+
+                        <label class="mt-2">Email Address</label><br>
+                        {% for i in journalst_form.email.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ journalst_form.email (class_="form-control form-control-lg", placeholder="Enter Your Email  Address") }}
+
+                        <label class="mt-2">Residential Address</label><br>
+                        {% for i in journalst_form.address.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ journalst_form.address(class_="form-control form-control-lg", placeholder="Enter Your Residential  Address Here") }}
+
+                        <label class="mt-2">Contact Number</label><br>
+                        {% for i in journalst_form.phone.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ journalst_form.phone(class_="form-control form-control-lg", placeholder="Contact Number", value="+234") }}
+
+                        <label class="mt-2">Password</label><br>
+                        {% for i in journalst_form.password.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ journalst_form.password (class_="form-control form-control-lg", placeholder="Set Password") }}
+
+                        <label class="mt-2">Confirm Password</label><br>
+                        {% for i in journalst_form.confirm_password.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ journalst_form.confirm_password (class_="form-control form-control-lg", placeholder="Confirm Password") }}
+
+                        <div class="d-flex btn-group mt-5">
+                            {{ journalst_form.submit(class="btn btn-outline-success d-inline-block",placeholder="Signup") }}
+                        </div>
+                        <div class="d-flex btn-group mb-4">
+                            <button type="reset" class="btn btn-outline-warning mt-2 d-inline-block">Clear</button>
+                        </div>
+                    </div>
+                    <p><span>Already an existing member?<br>
+                          Click here to 
+                    </span><a href="/journalist/login/"> Login</a></span> or<span><a href="/home/"> here</a> to go back to Home Page.</span></p>
+
+                    {{ journalst_form.csrf_token }}
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock changing %}
+</body>
+</html>

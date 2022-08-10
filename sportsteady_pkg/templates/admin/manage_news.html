@@ -1,0 +1,58 @@
+{% extends 'admin/admin_panel.html' %}
+{%block changing%}
+
+<!-- Test Tables starts -->
+<div class="main-panel">
+	<div class="content-wrapper">
+<div class="row">
+	<div class="col-md-12 grid-margin stretch-card">
+	  <div class="card">
+		<div class="card-body">
+			<h2 class="card-title text-center">News Posted So Far</h2>
+		  <div class="row">
+			<div class="col-12">
+			  <div class="table-responsive table-hover">
+				<table class="display expandable-table" style="width:100%">
+				  <thead>
+					<tr>
+						<th>#</th>
+						<th>Headline</th>
+						<th>Content</th>
+						<th>Image</th>
+						<th>Date Published</th>
+						<th>Time Published</th>
+						<th>Delete</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					{% for i in news %}
+					<tr>
+						<td>{{ loop.index }}</td>
+						<td>{{ i.news_title }}</td>
+						<td>{{ i.news_content }}</td>
+						<td><img class="img-fluid" src="{{url_for('static',filename='/uploads/'+i.news_image) }}"></td>
+						<td>{{ i.date_published.strftime('%A, %d %B %Y') }}</td>
+						<td>{{ i.date_published.strftime('%I:%M:%S %p ') }}</td>
+						<td>
+							<i href="/admin/delete/news/{{ i.news_id }}" onclick="return confirm('Do you really want to Remove {{ i.first_name }} {{ i.last_name }}?')" class="text-danger">
+								Delete
+							</i>
+						</td>
+					</tr>
+					{% endfor %}
+				  </tbody>
+			  </table>
+			  </div>
+			</div>
+		  </div>
+		  </div>
+		</div>
+
+		
+	  </div>
+	</div>
+</div>
+</div>
+<!-- Test Tables ends -->
+
+{%endblock changing%}

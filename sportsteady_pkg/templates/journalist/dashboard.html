@@ -1,0 +1,91 @@
+{% extends 'journalist/journalist_panel.html' %}
+{% block changing %}
+<!-- Main Page Starts -->
+<div class="main-panel">
+	<div class="content-wrapper">
+	  <div class="row">
+		<div class="col-md-12 grid-margin">
+		  <div class="row">
+			<div class="col-12 col-xl-8 mb-4 mb-xl-0">
+			  <h3 class="font-weight-bold">Welcome, {% set  name = session.get("journalist_name") %}
+				{% for i in name %}
+				<span><b>{{ i }}</b></span>
+				{% endfor %}
+			</h3>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-md-6 grid-margin stretch-card">
+		  <div class="card tale-bg">
+			<div class="card-people">
+			  {% if latest.news_image %}
+			  <img src="{{url_for('static',filename='/uploads/'+latest.news_image)}}" alt="latest news image">
+			  {% else %}
+			  <img src="{{url_for('static',filename='images/hero_bg_3.jpg')}}" alt="default image">
+			  {% endif %}
+			  <div class="weather-info">
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-md-6 grid-margin transparent">
+		  <div class="row">
+			<div class="col-md-6 mb-4 stretch-card transparent">
+			  <div class="card card-tale">
+				<div class="card-body">
+					<p class="mb-4">Total Number of News Posted:</p>
+					<p class="fs-30 mb-2">{{posts}}</p>
+				</div>
+			  </div>
+			</div>
+			<div class="col-md-6 mb-4 stretch-card transparent">
+			  <div class="card card-dark-blue">
+				<div class="card-body">
+					<p class="mb-1">First News:</p>
+					{% if first_post.news_title %}
+					<p class="">{{first_post.news_title}}</p>
+					{% else %}
+					<p>Sorry, you have zero posts <a class="text-warning" href="/add/post/">
+						Click Here to add a new post.
+						</a>
+					</p>
+					{% endif %}
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+			<div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+			  <div class="card card-light-blue">
+				<div class="card-body">
+					<p class="mb-1">Recent News:</p>
+					{% if latest.news_title %}
+					<p class="">{{latest.news_title}}</p>
+					{% else %}
+					<p>Sorry, you have zero posts <a class="text-warning" href="/add/post/">
+						Click Here to add a new post.
+						</a>
+					</p>
+					{% endif %}
+				</div>
+			  </div>
+			</div>
+			<div class="col-md-6 stretch-card transparent">
+			  <div class="card card-light-danger">
+				<div class="card-body">
+				  <p class="mb-1">Date Registered:</p>
+				  <p class="">{{admin.date_registered.strftime('%A, %d %B %Y')}}</p>
+				  <p>Time: <span>{{admin.date_registered.strftime('%I:%M:%S %p ')}}</span></p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- content-wrapper ends -->
+  </div>
+<!-- Main Page Ends -->
+{% endblock changing %}

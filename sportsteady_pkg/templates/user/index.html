@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sportsteady | Home</title>
+
+    <!-- required meta tags-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- external stylesheet-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+
+	<link rel="stylesheet" href="{{ url_for('static',filename='fonts/icomoon/style.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.theme.default.min.css') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style2.css')}}">
+	<!-- external stylesheet ends -->
+
+
+	<!-- internal stylesheet-->
+	<style type="text/css">
+		
+		
+	</style>
+</head>
+<body>
+{% extends 'user/base.html' %}
+{% block changing %}
+	<div class="container-fluid">
+
+	<!-- Header -->
+		<div class="container-fluid" id="navwrapper">
+			<div class="container-fluid" id="top">
+				<div class="row">
+					<div class="col">
+						<nav class="navbar navbar-expand-lg navbar-light mt-5" id="nav2">
+							<div class="container-fluid">
+								   <a class="navbar-brand" href="#"><span class="me-3"><img src="{{ url_for('static',filename='icons/sports (1).png')}}" height="10%" width="20%"></span></a>
+							   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								 <span class="navbar-toggler-icon"></span>
+							   </button>
+							   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+								 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+								   <li class="nav-item">
+									 <a class="nav-link active text-success" aria-current="page" href="/home/">Home</a>
+								   </li>
+								   <li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle nav-link active text-success" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									  News
+									</a>
+									<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									  <li><a class="dropdown-item text-warning" href="/athletics/">Athletics</a></li>
+									  <li><hr class="dropdown-divider"></li>
+									  <li><a class="dropdown-item text-warning" href="/football/">Football</a></li>
+									  <li><hr class="dropdown-divider"></li>
+									  <li><a class="dropdown-item text-warning" href="/tennis/">Tennis</a></li>
+									</ul>
+									</li>				      
+										 <li class="nav-item dropdown position-static">
+							   
+										 <!-- Toggle -->
+										 <a class="nav-link dropdown-toggle text-success" data-bs-toggle="dropdown" href="#">Fixtures</a>
+							   
+										 <!-- Menu -->
+										 <div class="dropdown-menu w-100">
+										 
+										   <!-- Tabs -->
+										   <div class="mb-2 mb-lg-0 border-bottom-lg">
+											 <div class="container">
+											   <div class="row">
+												 <div class="col-4">
+										 
+												   <!-- Nav -->
+												   <nav class="nav nav-tabs nav-overflow fs-xs border-bottom border-bottom-lg-0">
+													 <a class="nav-link text-uppercase active text-danger" data-bs-toggle="tab" href="/football/fixtures/" target="self">
+													   All Fixtures
+													 </a>
+												   </nav>
+			
+												 </div>
+											   </div>
+											 </div>
+										   </div>
+										 
+										   <!-- Tab content -->
+										   <div class="card card-lg">
+											 <div class="card-body">
+											   <div class="tab-content">
+												 <div class="tab-pane fade show active" id="navTab">
+												   <div class="container">
+													 <div class="row">
+													   <div class="col-6 col-md">
+										 
+														 <!-- Heading -->
+														 <div class="mb-5 fw-bold text-warning">Football</div>
+										 
+														 <!-- Links -->
+														 <ul class="list-styled mb-6 mb-md-0 fs-sm" style="list-style: none;">
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/football/fixtures/">Premier League</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/football/fixtures/">La Liga</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/football/fixtures/">Serie A</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/football/fixtures/">Ligue One</a>
+														   </li>
+														 </ul>
+										 
+													   </div>
+													   <div class="col-6 col-md">
+										 
+														 <!-- Heading -->
+														 <div class="mb-5 fw-bold text-success text-warning">Tennis</div>
+										 
+														 <!-- Links -->
+														 <ul class="list-styled mb-6 mb-md-0 fs-sm" style="list-style: none;">
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/tennis/">australian Open</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/tennis/">French Open</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/tennis/">US Open</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/tennis/">Wimbledon</a>
+														   </li>
+														 </ul>
+										 
+													   </div>
+													   <div class="col-6 col-md">
+														 <!-- Heading -->
+														 <div class="mb-5 fw-bold text-success text-warning">Athletics</div>
+										 
+														 <!-- Links -->
+														 <ul class="list-styled mb-6 mb-md-0 fs-sm" style="list-style: none;">
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/athletics/">Olympics</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/athletics/">IAAF Championship</a>
+														   </li>
+														 </ul>
+										 
+													   </div>
+													   
+													 </div>
+												   </div>
+												 </div>
+											   </div>
+											 </div>
+										   </div>
+										 
+										 </div>		
+									   </li>
+			
+									   <!-- Results -->
+									   <li class="nav-item dropdown position-static">
+							   
+										 <!-- Toggle -->
+										 <a class="nav-link dropdown-toggle text-success" data-bs-toggle="dropdown" href="#">Results</a>
+							   
+										 <!-- Menu -->
+										 <div class="dropdown-menu w-100">
+										 
+										   <!-- Tabs -->
+										   <div class="mb-2 mb-lg-0 border-bottom-lg">
+											 <div class="container">
+											   <div class="row">
+												 <div class="col-4">
+										 
+												   <!-- Nav -->
+												   <nav class="nav nav-tabs nav-overflow fs-xs border-bottom border-bottom-lg-0">
+													 <a class="nav-link text-uppercase active text-danger" data-bs-toggle="tab" href="#navTab">
+													   All Results
+													 </a>
+												   </nav>
+			
+												 </div>
+											   </div>
+											 </div>
+										   </div>
+										 
+										   <!-- Tab content -->
+										   <div class="card card-lg">
+											 <div class="card-body">
+											   <div class="tab-content">
+												 <div class="tab-pane fade show active" id="navTab">
+												   <div class="container">
+													 <div class="row">
+													   <div class="col-6 col-md">
+										 
+														 <!-- Heading -->
+														 <div class="mb-5 fw-bold text-warning">Football</div>
+										 
+														 <!-- Links -->
+														 <ul class="list-styled mb-6 mb-md-0 fs-sm" style="list-style: none;">
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/football/results/">Premier League</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/football/results/">La Liga</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/football/results/">Serie A</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/user/football/results/">Ligue One</a>
+														   </li>
+														 </ul>
+										 
+													   </div>
+													   <div class="col-6 col-md">
+										 
+														 <!-- Heading -->
+														 <div class="mb-5 fw-bold text-warning">Tennis</div>
+										 
+														 <!-- Links -->
+														 <ul class="list-styled mb-6 mb-md-0 fs-sm" style="list-style: none;">
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/tennis/">australian Open</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/tennis/">French Open</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/tennis/">US Open</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/tennis/">Wimbledon</a>
+														   </li>
+														 </ul>
+										 
+													   </div>
+													   <div class="col-6 col-md">
+														 <!-- Heading -->
+														 <div class="mb-5 fw-bold text-warning">Athletics</div>
+										 
+														 <!-- Links -->
+														 <ul class="list-styled mb-6 mb-md-0 fs-sm" style="list-style: none;">
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/athletics/">Olympics</a>
+														   </li>
+														   <li class="list-styled-item">
+															 <a class="list-styled-link" href="/athletics/">IAAF Championship</a>
+														   </li>
+														 </ul>
+										 
+													   </div>
+													   
+													 </div>
+												   </div>
+												 </div>
+											   </div>
+											 </div>
+										   </div>
+										 
+										 </div>
+			
+									   </li>
+								 </ul>
+								 <form class="d-flex">
+								   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+								   <button class="btn btn-outline-warning" type="submit">Search</button>
+								 </form>
+							   </div>
+							 </div>
+							</nav>
+							</div>
+			</div>
+			</div>
+			<div class="mt-2 slide-one-item home-slider owl-carousel">
+				{%for i in left_all_posts%}
+				<div class="site-blocks-cover overlay" style="background-image: url({{url_for('static',filename='/uploads/'+i.news_image)}})" data-aos="fade" data-stellar-background-ratio="0.5">
+				  <div class="container">
+					<div class="row align-items-center justify-content-start">
+					  <div class="col-md-6 text-center text-md-left" data-aos="fade-up" data-aos-delay="400">
+						<h1 class="bg-text-line">{{i.news_title}}</h1>
+						<p><a href="/news/{{i.news_id}}" class="btn btn-primary btn-sm rounded-0 py-3 px-5">Read More</a></p>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				{%endfor%} 	  
+				  
+			  </div>
+		</div>
+		</div>
+		</div>
+
+		<!-- Contents -->
+
+		<div class="row mt-3">
+			<div class="col-md-6 mx-4" style="border: 1px grey; border-radius: 1%;">
+				<h1>Latest Stories</h1>
+				<hr size="3" color="" width="100%">
+ 				<div class="" style="display:flex">
+					<div style="width: 40%;">
+						<img class="img-fluid" src="{{ url_for('static',filename='/uploads/'+left_post.news_image) }}" >
+					</div>
+					<div style="width: 40%; padding: 10px;">
+						<h2><a href="/news/{{left_post.news_id}}/" style="color: red;">{{left_post.news_title}};</a></h2>
+					</div>
+				</div>
+			</div>
+
+        <!-- Top Stories -->
+		
+		<div class="row">
+			<div class="col mt-3" style="border: 1px grey; border-radius: 1%;">
+				<div class="row container-fluid">
+					{% for i in all_posts %}
+					<hr size="3" color="" width="100%">
+					<div class="col-md-6 mt-3 mb-3" style="width: 40%;">
+						<img class="img-fluid" src="{{ url_for('static',filename='uploads/'+i.news_image) }}">
+					</div>
+					<div  class="col-md-6" style="width: 40%; padding: 10px;">
+						<h2><a href="/news/{{i.news_id}}/" style="color: red;">{{i.news_title}}</a></h2>
+					</div>
+					{% endfor %}
+					<hr size="3" color="" width="100%">
+				</div>
+				
+			</div>
+			
+		</div>
+
+	<!-- Live stream section -->
+	<a href="/user/login/" class="play-button popup-vimeo icon-play">
+		<section>
+			<div class="container">
+			   <div class="row">
+				  <div class="col-md-12">
+					 <div class="full">
+						<div class="main-heading sytle-2">
+							<h2 class="icon-play text-center">				Livestream
+							</h2>
+						</div>
+					 </div>
+				  </div>
+			   </div>
+			</div>
+		 </section>
+		 <section class="video_section_main theme-padding middle-bg vedio">
+			<div class="container">
+			   <div class="row">			
+					<img class="img-responsive icon-play" src="{{url_for('static',filename='images/img-07.jpg')}}" alt="#" />		 
+			   </div>
+			</div>
+		 </section>
+	</a>
+	<!-- Live stream section ends-->
+		
+		<div class="row container mt-4">
+			<h2 class="ms-4">Other Stories</h2>
+			<div class="col mt-3" style="border: 1px grey; border-radius: 1%;">
+				<div class="row container-fluid">
+					{% for i in right_all_posts %}
+					<hr size="3" color="" width="100%">
+					<div  class="col-md-6" style="width: 40%; padding: 10px;">
+						<h2><a href="/news/{{i.news_id}}/" style="color: red;">{{i.news_title}}</a></h2>
+					</div>
+					<div class="col-md-6 mt-3 mb-3" style="width: 40%;">
+						<img class="img-fluid" src="{{ url_for('static',filename='uploads/'+i.news_image) }}">
+					</div>
+					{% endfor %}
+					<hr size="3" color="" width="100%">
+				</div>
+				
+			</div>
+			
+		</div>
+				<!-- Top Stories End-->
+
+	</div>
+	<!-- Content ends -->
+
+	    <!-- Footer Starts -->
+		<footer class="site-footer border-top">
+			<div class="container">
+			  <div class="row">
+				<div class="col-lg-4">
+				  <div class="mb-5">
+					<h3 class="footer-heading mb-4">About Sportsteady</h3>
+					<p>At Sportsteady, we are charged with sole aim of providing first hand and quality information around the sporting globe and beyond, beating the breaking news.
+						<br>
+					Sports Journalists are also not left out as we provide a platform for you to enhance your journalism skills.
+					</p>
+				  </div>
+	  
+				  <div class="mb-5">
+					<h3 class="footer-heading mb-4" id="recentPosts">Recent Posts</h3>
+					{%for i in left_all_posts%}
+					<div class="block-25">
+					  <ul class="list-unstyled">
+						<li class="mb-3">
+						  <a href="/news/{{i.news_id}}/" class="d-flex">
+							<figure class="image mr-4">
+							  <img src="{{ url_for('static',filename='/uploads/'+i.news_image)}}" alt="" class="img-fluid">
+							</figure>
+							<div class="text">
+							  <h3 class="heading font-weight-light">{{i.news_title}}</h3>
+							</div>
+						  </a>
+						</li>	
+					  </ul>
+					</div>
+					{%endfor%}
+				  </div>
+				  
+				</div>
+				<div class="col-lg-4 mb-5 mb-lg-0">
+				  <div class="row mb-5">
+					<div class="col-md-12">
+					  <h3 class="footer-heading mb-4">Quick Menu</h3>
+					</div>
+					<div class="col-md-6 col-lg-6">
+					  <ul class="list-unstyled">
+						<li><a href="#top">Home</a></li>
+						<li><a href="/football/fixtures/">Matches</a></li>
+						<li><a href="#top">News</a></li>
+						<li><a href="#recentPosts">Latest Posts</a></li>
+					  </ul>
+					</div>
+					<div class="col-md-6 col-lg-6">
+					  <ul class="list-unstyled">
+						<li><a href="/athletics/">Athletics</a></li>
+						<li><a href="/football/">Football</a></li>
+						<li><a href="/tennis/">Tennis</a></li>
+					  </ul>
+					</div>
+				  </div>
+	  
+				  <div class="row">
+					<div class="col-md-12">
+					  <h3 class="footer-heading mb-4">Follow Us</h3>
+	  
+					  <div>
+						<a href="https://facebook.com" target="_blank" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+						<a href="https://mobile.twitter.com/patrick_nwaduba" target="_blank" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+						<a href="https://www.instagram.com/sportsteady/" target="_blank" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+						<a href="https://www.linkedin.com/mwlite/in/patrick-nwaduba-ba479b222" target="_blank" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+					  </div>
+					</div>
+				  </div>
+	  
+				</div>
+	  
+				<div class="col-lg-4 mb-5 mb-lg-0">
+				  <div class="mb-5">
+					<span class="footer-heading mb-4">Live Stream
+						<a href="/user/login/" class="play-button popup-vimeo"><span class="icon-play d-inline-block"></span></a>
+					</span>
+				  </div>
+	  
+				  <div class="mb-5">
+					<h3 class="footer-heading mb-2">Join Our Commuity Of Journalists</h3>
+					<p>As one of the fast growing sports meadia outlets in Nigeria, sportsteady creates a platform for grassroot journalists to showcase their reporting skills. Sign up here for free Today!</p>
+						<a href="/journalist/signup/"><div class="input-group-append">
+						  <button class="btn btn-primary" type="button" id="button-addon2">Sign Up</button>
+						</div></a>	  
+				  </div>
+	  
+				</div>
+				
+			  </div>
+			  <div class="row pt-5 mt-5 text-center">
+				<div class="col-md-12">
+				  <p>
+				  Copyright &copy; &nbsp; || &nbsp; &#9734;Designed & Built by Patrick Nwaduba&#9734; &nbsp;<span class="icon-github" aria-hidden="true"></span> by <a href="https://github.com/Patrik-Knoles" target="_blank" >Patrik-Knoles</a>
+				  </p>
+				</div>
+				
+			  </div>
+			</div>
+		  </footer>
+			<!-- Footer ends -->
+	
+	{% endblock changing %}
+
+    <!--jQuery-->
+    <script type="text/javascript" language="Javascript" src="{{ url_for('static',filename='jquery-3.6.0.js')}}"></script>
+
+    <!--JS Files-->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap.bundle.js')}}"></script>
+	<script type="text/javascript" language="Javascript"></script>
+</body>
+</html>

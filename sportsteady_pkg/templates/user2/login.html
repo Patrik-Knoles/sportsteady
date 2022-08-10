@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sportsteady User | Login</title>
+    <!-- external stylesheet-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+</head>
+<body>
+   <div class="container mt-5" style="background-color:whitesmoke;">
+        <div class="row" style="justify-content: center;">
+            <div class="col-md-9 ms-5" style="justify-content: center; margin: 70px;">
+                <form action="" method="post">
+                    <h1>User Login</h1>
+                    <div class="col-md-9 lead" style="align-items: center;">
+                        
+                        <p>Username</p>
+                        <input class="form-control" type="text" name="username" placeholder="Choose  a username">
+                        <p>Email</p>
+                        <input class="form-control" type="text" name="email" placeholder="Enter your email adress">
+                        <p>Password</p>
+                        <input class="form-control" type="password" name="pwd" placeholder="Set Password">
+
+                        <div>
+                            <button type="reset" class="btn btn-outline-warning mt-2">Clear</button><button class="btn btn-outline-success ms-3 mt-2">Login</button>
+                        </div>
+                    </div>
+                    <p><span>Not an existing member?<br>
+                          Click here to 
+                    </span><a href="/user/signup/"> Login</a></span> or<span><a href="/user/signup/"> here</a> to go back to Home Page.</span></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

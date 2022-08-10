@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportsteady redirecting...</title>
+</head>
+<body style="background-color: rgb(243,243,249);">
+
+    <div class="text-center" style="height:800px; margin: auto; position:relative">
+        <img src="{{url_for('static',filename='images/Untitled-design-unscreen.gif')}}" class="img-fluid" style="margin: auto; position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);">
+    </div>
+    
+    <script>
+        setTimeout(function(){
+            window.location.href = '/livestream/';
+        },5000);
+    </script>
+</body>
+</html>

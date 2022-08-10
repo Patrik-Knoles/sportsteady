@@ -1,0 +1,287 @@
+{% extends 'admin/admin_panel.html' %}
+{%block changing%}
+
+<!-- Test Tables starts -->
+<div class="main-panel">
+    {% set msg = get_flashed_messages()%}
+    {%for i in msg%}
+    <p class="alert alert-success mt-2">{{i}}</p>
+    {%endfor%}
+	<div class="content-wrapper">
+<div class="row">
+	<div class="col-md-12 grid-margin stretch-card">
+	  <div class="card">
+		<div class="card-body">
+			<h2 class="card-title text-center">Results Form</h2>
+		  <div class="row">
+			<div class="col-12">
+			  <div class="table-responsive table-hover">
+				<form action="/admin/manage/results/" method="post">
+					<input type="hidden" name="csrf_token" id="csrf_token" value="{{ csrf_token() }}">
+					<table class="display expandable-table" style="width:100%">
+						<thead>
+							<tr>
+								<th>#</th>
+                                <th>Game-week</th>
+								<th>Home Team</th>
+                                <th>Scoreboard</th>
+								<th>Away Team</th>
+                                <th>League</th>
+                                <th>Date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+                                <td>1</td>
+                                <td><input name="week" class="form-control d-flex"></td>
+								<td><input name="home_team" class="form-control d-flex"></td>
+                                <td><input name="scoreboard" class="form-control d-flex" placeholder="0-0"></td>
+								<td><input name="away_team" class="form-control"></td>
+                                <td>
+                                    <select name="league" class="form-control">
+                                        <option value="">Select a League</option>
+                                        {% for i in league %}
+                                        <option value="{{i.sub_id}}">{{i.sub_name}}</option>
+                                        {% endfor %}
+                                    </select>   
+                                </td>
+                                <td><input name="date" class="form-control d-flex" placeholder="0000-00-00"></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="d-flex btn-group">
+						<button class="btn btn-outline-success mt-2">Submit Result</button>
+					</div>
+				</form>
+			  </div>
+			</div>
+		  </div>
+		  </div>
+		</div>
+
+		
+	  </div>
+	</div>
+
+    <div class="row">
+        <!-- Epl Fixtures Starts -->
+        <div class="col-md-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-center">
+                    <span class="me-2"> <img src="{{url_for ('static',filename='icons/epllogo-removebg-preview.png')}}" alt="" height="60px"></span> Premier League Results
+                </h2>
+              <div class="row">
+                <div class="col-12">
+                  <div class="table-responsive table-hover">
+                        <table class="display expandable-table" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Game-week</th>
+                                    <th>Home Team</th>
+                                    <th>Scoreboard</th>
+                                    <th>Away Team</th>
+                                    <th>Date</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for i in epl%}
+                                <tr>
+                                    <td>{{loop.index}}</td>
+                                    <td>{{i.results_week}}</td>
+                                    <td>{{i.teamhome_details.team_name}}</td>
+                                    <td class="text-center">{{i.scoreboard}}</td>
+                                    <td>{{i.teamhaway_details.team_name}}</td>
+                                    <td>{{i.results_date.strftime('%Y-%m-%d')}}</td>
+                                    <td>
+                                        <a href="/edit/results/{{ i.results_id }}" class="text-primary">
+                                            Edit
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="/delete/results/{{ i.results_id }}" onclick="return confirm('Do you really want to delete this record?'+'\n'+'This action cannot be undone')" class="text-danger">
+                                            Delete
+                                        </a>
+                                    </td>                       
+                                </tr>
+                                {%endfor%}
+                            </tbody>
+                        </table>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <!-- Epl Fixtures End -->
+
+          <!-- La Liga Fixtures Starts -->
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                    <h2 class="card-title text-center">
+                        <span class="me-2"> <img src="{{url_for ('static',filename='icons/laliga-removebg-preview.png')}}" alt="" height="60px"></span> La Liga Results
+                    </h2>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="table-responsive table-hover">
+                          <table class="display expandable-table" style="width:100%">
+                             <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Game-week</th>
+                                    <th>Home Team</th>
+                                    <th>Scoreboard</th>
+                                    <th>Away Team</th>
+                                    <th>Date</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for i in la_liga%}
+                                <tr>
+                                    <td>{{loop.index}}</td>
+                                    <td>{{i.results_week}}</td>
+                                    <td>{{i.teamhome_details.team_name}}</td>
+                                    <td class="text-center">{{i.scoreboard}}</td>
+                                    <td>{{i.teamhaway_details.team_name}}</td>
+                                    <td>{{i.results_date.strftime('%Y-%m-%d')}}</td>
+                                    <td>
+                                        <a href="/edit/results/{{ i.results_id }}" class="text-primary">
+                                            Edit
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="/delete/results/{{ i.results_id }}" onclick="return confirm('Do you really want to delete this record?'+'\n'+'This action cannot be undone')" class="text-danger">
+                                            Delete
+                                        </a>
+                                    </td>                       
+                                </tr>
+                                {%endfor%}
+                            </tbody>
+                          </table>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <!-- La Liga Fixtures End -->
+
+            <!-- Serie A Fixtures Starts -->
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title text-center">
+                    <span class="me-2"> <img src="{{url_for ('static',filename='icons/seriea-removebg-preview.png')}}" alt="" height="60px"></span> Serie A Results
+                </h2>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="table-responsive table-hover">
+                            <table class="display expandable-table" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Game-week</th>
+                                        <th>Home Team</th>
+                                        <th>Scoreboard</th>
+                                        <th>Away Team</th>
+                                        <th>Date</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {%for i in serie_a%}
+                                    <tr>
+                                        <td>{{loop.index}}</td>
+                                        <td>{{i.results_week}}</td>
+                                        <td>{{i.teamhome_details.team_name}}</td>
+                                        <td class="text-center">{{i.scoreboard}}</td>
+                                        <td>{{i.teamhaway_details.team_name}}</td>
+                                        <td>{{i.results_date.strftime('%Y-%m-%d')}}</td>
+                                        <td>
+                                            <a href="/edit/results/{{ i.results_id }}" class="text-primary">
+                                                Edit
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="/delete/results/{{ i.results_id }}" onclick="return confirm('Do you really want to delete this record?'+'\n'+'This action cannot be undone')" class="text-danger">
+                                                Delete
+                                            </a>
+                                        </td>                       
+                                    </tr>
+                                    {%endfor%}
+                                </tbody>
+                          </table>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <!-- Serie A End -->
+
+            <!-- Ligue 1 Starts -->
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title text-center">
+                    <span class="me-2"> <img src="{{url_for ('static',filename='icons/ligue1-removebg-preview.png')}}" alt="" height="60px"></span> Ligue 1 Results
+                </h2>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="table-responsive table-hover">
+                          <table class="display expandable-table" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Game-week</th>
+                                    <th>Home Team</th>
+                                    <th>Scoreboard</th>
+                                    <th>Away Team</th>
+                                    <th>Date</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for i in ligue_1%}
+                                <tr>
+                                    <td>{{loop.index}}</td>
+                                    <td>{{i.results_week}}</td>
+                                    <td>{{i.teamhome_details.team_name}}</td>
+                                    <td class="text-center">{{i.scoreboard}}</td>
+                                    <td>{{i.teamhaway_details.team_name}}</td>
+                                    <td>{{i.results_date.strftime('%Y-%m-%d')}}</td>
+                                    <td>
+                                        <a href="/edit/results/{{ i.results_id }}" class="text-primary">
+                                            Edit
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="/delete/results/{{ i.results_id }}" onclick="return confirm('Do you really want to delete this record?'+'\n'+'This action cannot be undone')" class="text-danger">
+                                            Delete
+                                        </a>
+                                    </td>                       
+                                </tr>
+                                {%endfor%}
+                            </tbody>
+                          </table>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <!-- Ligue 1 Fixtures End -->
+        </div>
+</div>
+</div>
+<!-- Test Tables ends -->
+
+{%endblock changing%}

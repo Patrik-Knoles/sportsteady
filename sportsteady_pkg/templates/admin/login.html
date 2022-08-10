@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- external stylesheet-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+</head>
+<body>
+{% extends 'user/base.html' %}
+{% block changing %}
+   <div class="container mt-5" style="background-color:whitesmoke;">
+        <div class="row" style="justify-content: center;">
+            <div class="col-md-9 ms-5" style="justify-content: center; margin: 70px;">
+                <form action="/admin/login/" method="post">
+
+                    <input type="hidden" name="csrf_token" id="csrf_token" value="{{ csrf_token() }}">
+                    
+                    <h1>Welcome Back Admin!</h1>
+                    <div class="col-md-9 lead mt-5" style="align-items: center;">
+                        {% set msg = get_flashed_messages() %}
+                        {% for i in msg %}
+                        <p class="alert alert-danger form-control">{{ i }}</p>
+                        {% endfor %}
+                        <p>Email</p>
+                        <input class="form-control" type="text" name="email" placeholder="Enter your email adress">
+                        <p>Password</p>
+                        <input class="form-control" type="password" name="pwd" placeholder="Set Password">
+
+                        <div>
+                            <button type="reset" class="btn btn-outline-warning mt-2">Clear</button><button class="btn btn-outline-success ms-3 mt-2">Login</button>
+                        </div>
+                    </div> 
+                    <span>Click<a href="/home/"> here</a> to go back to Home Page.</span></p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock changing %}
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sportsteady User | Signup</title>
+    <!-- external stylesheet-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+</head>
+{% extends 'user/navbar.html' %}
+{% block changing %}
+<body>
+     <div class="container mt-5" style="background-color:whitesmoke;">
+        <div class="row" style="justify-content: center;">
+            <div class="col-md-9 ms-5" style="justify-content: center;">
+                <form action="/signing/" method="post">
+
+                    {{ user_form.csrf_token }}
+
+                    <h1 class="mt-5">User Sign Up</h1>
+                    <div class="col-md-9 lead" style="align-items: center;">
+                        
+                        <label>First name</label><br>
+                        {% for i in user_form.firstname.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ user_form.firstname (class_="form-control form-control-lg", placeholder="Enter Your Firstname") }}
+
+                        <label class="mt-2">Last name</label><br>
+                        {% for i in user_form.lastname.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ user_form.lastname (class_="form-control form-control-lg", placeholder="Enter Your Lastname") }}
+
+                        <label class="mt-2">Email Address</label><br>
+                        {% for i in user_form.email.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ user_form.email (class_="form-control form-control-lg", placeholder="Enter Your Email  Address") }}
+
+                        <label class="mt-2">Contact Number</label><br>
+                        {% for i in user_form.phone.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ user_form.phone (class_="form-control form-control-lg", value="+234") }}
+
+                        <label class="mt-2">Password</label><br>
+                        {% for i in user_form.password.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ user_form.password (class_="form-control form-control-lg", placeholder="Set Password") }}
+
+                        <label class="mt-2">Confirm Password</label><br>
+                        {% for i in user_form.confirm_password.errors %}
+                            <span class="text-danger">{{i}}</span>
+                        {% endfor %}
+                        {{ user_form.confirm_password (class_="form-control form-control-lg", placeholder="Confirm Password") }}
+
+                        <div class="d-flex btn-group mt-5">
+                            {{ user_form.submit(class="btn btn-outline-success d-inline-block",placeholder="Signup") }}
+                        </div>
+                        <div class="d-flex btn-group mb-4">
+                            <button type="reset" class="btn btn-outline-warning mt-2 d-inline-block">Clear</button>
+                        </div>
+                    </div>
+                    <p><span>Already an existing member?<br>
+                          Click here to 
+                    </span class="mb-5"><a href="/user/login/"> Login</a></span> or<span><a href="/user/login/"> here</a> to go back to Home Page.</span></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock changing%}
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+	<!-- external stylesheet-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+
+	<link rel="stylesheet" href="{{ url_for('static',filename='fonts/icomoon/style.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.theme.default.min.css') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style2.css')}}">
+	
+	<!-- Fixtures CSS -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/custom.css')}}">
+	
+	<!-- external stylesheet ends -->
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="{{url_for('static',filename='icons/Logo.png')}}" />
+
+
+</head>
+<body>
+
+	
+
+
+<!-- Registration bar starts -->
+	<header class="site-navbar absolute transparent" role="banner">
+		<div class="py-3">
+		  <div class="container">
+			<div class="row align-items-center">
+			  <div class="col-6 col-md-3">
+				<a href="/user/login/" class="text-secondary px-2 pl-0"><span class="icon-live_tv"></span></a>
+				<a href="/user/login/" class="text-secondary px-2"><span class="icon-user-circle-o"></span></a>
+				<a href="/journalist/signup/" class="text-secondary px-2"><span class="icon-newspaper-o">Journalists</span></a>
+				<a href="#" class="text-secondary px-2"><span class="icon-github
+					"></span></a>
+			  </div>
+			  <div class="col-6 col-md-9 text-right">
+				<div class="d-inline-block"><a href="gmail.com" class="text-secondary p-2 d-flex align-items-center"><span class="icon-envelope mr-3"></span> <span class="d-none d-md-block">sportsteady@gmail.com</span></a></div>
+				<div class="d-inline-block"><a href="https://wa.link/vhlhkf" class="text-secondary p-2 d-flex align-items-center"><span class="icon-phone mr-0 mr-md-3"></span> <span class="d-none d-md-block">+234 704 917 9762</span></a></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</header>
+<!-- Registration bar ends -->
+
+<!-- Main navbar starts -->
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<nav class="navbar navbar-expand-lg navbar-light mt-2" id="nav2">
+				<div class="container-fluid">
+					   <a class="navbar-brand" href="#"><span class="me-3"><img src="{{ url_for('static',filename='icons/sports (1).png')}}" height="10%" width="20%"></span></a>
+				   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					 <span class="navbar-toggler-icon"></span>
+				   </button>
+				   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+					 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+					   <li class="nav-item">
+						 <a class="nav-link active text-success" aria-current="page" href="/home/">Home</a>
+					   </li>
+					   <li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle nav-link active text-success" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						  News
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						  <li><a class="dropdown-item text-warning" href="/athletics/">Athletics</a></li>
+						  <li><hr class="dropdown-divider"></li>
+						  <li><a class="dropdown-item text-warning" href="/football/">Football</a></li>
+						  <li><hr class="dropdown-divider"></li>
+						  <li><a class="dropdown-item text-warning" href="/tennis/">Tennis</a></li>
+						</ul>
+						</li>				      
+							 <li class="nav-item dropdown position-static">
+				   
+							 <!-- Toggle -->
+							 <a class="nav-link dropdown-toggle text-success" data-bs-toggle="dropdown" href="#">Fixtures</a>
+				   
+							 <!-- Menu -->
+							 <div class="dropdown-menu w-100">
+							 
+							   <!-- Tabs -->
+							   <div class="mb-2 mb-lg-0 border-bottom-lg">
+								 <div class="container">
+								   <div class="row">
+									 <div class="col-4">
+							 
+									   <!-- Nav -->
+									   <nav class="nav nav-tabs nav-overflow fs-xs border-bottom border-bottom-lg-0">
+										 <a class="nav-link text-uppercase active text-danger" data-bs-toggle="tab" href="/football/fixtures/" target="self">
+										   All Fixtures
+										 </a>
+									   </nav>
+
+									 </div>
+								   </div>
+								 </div>
+							   </div>
+							 
+							   <!-- Tab content -->
+							   <div class="card card-lg">
+								 <div class="card-body">
+								   <div class="tab-content">
+									 <div class="tab-pane fade show active" id="navTab">
+									   <div class="container">
+										 <div class="row">
+										   <div class="col-6 col-md">
+							 
+											 <!-- Heading -->
+											 <div class="mb-5 fw-bold text-warning">Football</div>
+							 
+											 <!-- Links -->
+											 <ul class="list-styled mb-6 mb-md-0 fs-sm" style="list-style: none;">
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/football/">Premier League</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/football/">La Liga</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/football/">Serie A</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/football/">Ligue One</a>
+											   </li>
+											 </ul>
+							 
+										   </div>
+										   <div class="col-6 col-md">
+							 
+											 <!-- Heading -->
+											 <div class="mb-5 fw-bold text-success text-warning">Tennis</div>
+							 
+											 <!-- Links -->
+											 <ul class="list-styled mb-6 mb-md-0 fs-sm" style="list-style: none;">
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/tennis/">australian Open</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/tennis/">French Open</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/tennis/">US Open</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/tennis/">Wimbledon</a>
+											   </li>
+											 </ul>
+							 
+										   </div>
+										   <div class="col-6 col-md">
+											 <!-- Heading -->
+											 <div class="mb-5 fw-bold text-success text-warning">Athletics</div>
+							 
+											 <!-- Links -->
+											 <ul class="list-styled mb-6 mb-md-0 fs-sm" style="list-style: none;">
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="./shop.html">Olympics</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="./shop.html">IAAF Championship</a>
+											   </li>
+											 </ul>
+							 
+										   </div>
+										   
+										 </div>
+									   </div>
+									 </div>
+								   </div>
+								 </div>
+							   </div>
+							 
+							 </div>		
+						   </li>
+
+						   <!-- Results -->
+						   <li class="nav-item dropdown position-static">
+				   
+							 <!-- Toggle -->
+							 <a class="nav-link dropdown-toggle text-success" data-bs-toggle="dropdown" href="#">Results</a>
+				   
+							 <!-- Menu -->
+							 <div class="dropdown-menu w-100">
+							 
+							   <!-- Tabs -->
+							   <div class="mb-2 mb-lg-0 border-bottom-lg">
+								 <div class="container">
+								   <div class="row">
+									 <div class="col-4">
+							 
+									   <!-- Nav -->
+									   <nav class="nav nav-tabs nav-overflow fs-xs border-bottom border-bottom-lg-0">
+										 <a class="nav-link text-uppercase active text-danger" data-bs-toggle="tab" href="#navTab">
+										   All Results
+										 </a>
+									   </nav>
+
+									 </div>
+								   </div>
+								 </div>
+							   </div>
+							 
+							   <!-- Tab content -->
+							   <div class="card card-lg">
+								 <div class="card-body">
+								   <div class="tab-content">
+									 <div class="tab-pane fade show active" id="navTab">
+									   <div class="container">
+										 <div class="row">
+										   <div class="col-6 col-md">
+							 
+											 <!-- Heading -->
+											 <div class="mb-5 fw-bold text-warning">Football</div>
+							 
+											 <!-- Links -->
+											 <ul class="list-styled mb-6 mb-md-0 fs-sm" style="list-style: none;">
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/football/results/">Premier League</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/football/results/">La Liga</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/football/results/">Serie A</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/football/results/">Ligue One</a>
+											   </li>
+											 </ul>
+							 
+										   </div>
+										   <div class="col-6 col-md">
+							 
+											 <!-- Heading -->
+											 <div class="mb-5 fw-bold text-warning">Tennis</div>
+							 
+											 <!-- Links -->
+											 <ul class="list-styled mb-6 mb-md-0 fs-sm" style="list-style: none;">
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/tennis/">australian Open</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/tennis/">French Open</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/tennis/">US Open</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/tennis/">Wimbledon</a>
+											   </li>
+											 </ul>
+							 
+										   </div>
+										   <div class="col-6 col-md">
+											 <!-- Heading -->
+											 <div class="mb-5 fw-bold text-warning">Athletics</div>
+							 
+											 <!-- Links -->
+											 <ul class="list-styled mb-6 mb-md-0 fs-sm" style="list-style: none;">
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/athletics/">Olympics</a>
+											   </li>
+											   <li class="list-styled-item">
+												 <a class="list-styled-link" href="/athletics/">IAAF Championship</a>
+											   </li>
+											 </ul>
+							 
+										   </div>
+										   
+										 </div>
+									   </div>
+									 </div>
+								   </div>
+								 </div>
+							   </div>
+							 
+							 </div>
+
+						   </li>
+					 </ul>
+					 <form class="d-flex">
+					   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					   <button class="btn btn-outline-warning" type="submit">Search</button>
+					 </form>
+				   </div>
+				 </div>
+				</nav>
+				</div>
+</div>
+</div>
+<!-- Main navbar ends -->
+{% block changing%}
+
+{% endblock changing%}
+
+    <!--jQuery-->
+    <script type="text/javascript" language="Javascript" src="{{ url_for('static',filename='jquery-3.6.0.js')}}"></script>
+
+    <!--JS Files-->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap.bundle.js')}}"></script>
+	<script type="text/javascript" language="Javascript"></script>
+
+	<!-- External Js Files Starts -->
+	<script src="{{ url_for('static',filename='js/jquery-3.3.1.min.js')}}"></script>
+	<script src="{{ url_for('static',filename='js/jquery-migrate-3.0.1.min.js')}}"></script>
+	<script src="{{ url_for('static',filename='js/jquery-ui.js')}}"></script>
+	<script src="{{ url_for('static',filename='js/popper.min.js')}}"></script>
+	<script src="{{ url_for('static',filename='js/bootstrap.min.js')}}"></script>
+	<script src="{{ url_for('static',filename='js/owl.carousel.min.js')}}"></script>
+	<script src="{{ url_for('static',filename='js/jquery.stellar.min.js')}}"></script>
+	<script src="{{ url_for('static',filename='js/jquery.countdown.min.j')}}s"></script>
+	<script src="{{ url_for('static',filename='js/jquery.magnific-popup.min.js')}}"></script>
+	<script src="{{ url_for('static',filename='js/aos.js')}}"></script>
+
+	<script src="{{ url_for('static',filename='js/main.js')}}"></script>
+	<!-- External Js Files Ends -->
+
+</body>
+</html>

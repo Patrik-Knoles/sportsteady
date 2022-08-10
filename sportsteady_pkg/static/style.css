@@ -1,0 +1,78 @@
+/*
+style for final project
+*/
+
+div{
+	border: px solid black;
+}
+
+@font-face{
+	font-family:"myfont";
+	src:url("specials/Nunito-VariableFont_wght.ttf") format('truetype'),
+		url("specials/SourceSerifPro-Regular.ttf") format('truetype')
+}
+
+#navwrapper{
+	background-image:url(images/martin-aarflot-yqPztPTSBts-unsplash.jpg);
+	background-size:cover;
+	height: 1000px;
+}
+
+#nav1{
+	background-color: #1C1C21;
+	color: #C3C3C9;
+}
+
+#nav2{
+	background-color: #F3F3F9;
+	color: rgb(246,140,17) !important;
+}
+
+#nav3{
+	color: #29293A;
+}
+
+#main_footer{
+	height: 500px;
+	background-color: #29293A;
+	color: #FFFFFF;
+}
+
+#livestream{
+	height: 1000px;
+	background-image:url(images/thomas-serer-r-xKieMqL34-unsplash.jpg);
+	background-size:cover;
+}
+
+
+.navbar a{
+         color: rgb(0,35,106);
+         }
+
+.bottom-left{
+	position: absolute;
+	bottom:2%;
+	color: white;
+	padding:20px;
+}
+
+.bottom-left2{
+	position: absolute;
+	bottom:2%;
+	color: white;
+	padding:35px;
+}
+
+
+
+a{
+	text-decoration: none;
+	color: red;
+}
+
+	#icon li{
+         	display: inline;
+         	list-style-type: none;
+         }
+
+		/*Tennis page*/

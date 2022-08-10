@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+	<!-- external stylesheet-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+
+	<link rel="stylesheet" href="{{ url_for('static',filename='fonts/icomoon/style.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.theme.default.min.css') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/aos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style2.css')}}">
+	<!-- external stylesheet ends -->
+
+</head>
+<body>
+
+	
+
+
+<!-- Registration bar starts -->
+	<header class="site-navbar absolute transparent" role="banner">
+		<div class="py-3">
+		  <div class="container">
+			<div class="row align-items-center">
+			  <div class="col-6 col-md-3">
+				<a href="/user/redirect/" class="text-secondary px-2 pl-0"><span class="icon-live_tv"></span></a>
+				<a href="/user/logout/" class="text-secondary px-2"><span class="icon-user-times"> Logout</span></a>
+				<a href="/journalist/signup/" class="text-secondary px-2"><span class="icon-newspaper-o">Journalists</span></a>
+			  </div>
+			  <div class="col-6 col-md-9 text-right">
+				<div class="d-inline-block"><a href="gmail.com" class="text-secondary p-2 d-flex align-items-center"><span class="icon-envelope mr-3"></span> <span class="d-none d-md-block">sportsteady@gmail.com</span></a></div>
+				<div class="d-inline-block"><a href="https://wa.link/vhlhkf" class="text-secondary p-2 d-flex align-items-center"><span class="icon-phone mr-0 mr-md-3"></span> <span class="d-none d-md-block">+234 704 917 9762</span></a></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</header>
+<!-- Registration bar ends -->
+{% block changing%}
+
+{% endblock changing%}
+
+<!--jQuery-->
+<script type="text/javascript" language="Javascript" src="{{ url_for('static',filename='jquery-3.6.0.js')}}"></script>
+
+<!--JS Files-->
+<script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap.bundle.js')}}"></script>
+<script type="text/javascript" language="Javascript"></script>
+
+<!-- External Js Files Starts -->
+<script src="{{ url_for('static',filename='js/jquery-3.3.1.min.js')}}"></script>
+<script src="{{ url_for('static',filename='js/jquery-migrate-3.0.1.min.js')}}"></script>
+<script src="{{ url_for('static',filename='js/jquery-ui.js')}}"></script>
+<script src="{{ url_for('static',filename='js/popper.min.js')}}"></script>
+<script src="{{ url_for('static',filename='js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for('static',filename='js/owl.carousel.min.js')}}"></script>
+<script src="{{ url_for('static',filename='js/jquery.stellar.min.js')}}"></script>
+<script src="{{ url_for('static',filename='js/jquery.countdown.min.j')}}s"></script>
+<script src="{{ url_for('static',filename='js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{ url_for('static',filename='js/aos.js')}}"></script>
+
+<script src="{{ url_for('static',filename='js/main.js')}}"></script>
+<!-- External Js Files Ends -->
+
+</body>
+</html>
